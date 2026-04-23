@@ -21,6 +21,7 @@ class _CreateAccountState extends State<CreateAccount> {
   final email_Controller = TextEditingController();
   final password_Controller = TextEditingController();
   final phone_Controller = TextEditingController();
+  // final auth_controller =TextEditingController();
 
   @override
   Widget build(BuildContext context) {
