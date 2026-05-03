@@ -11,7 +11,7 @@ import 'package:grocery_app/Providers/Profile_providers/editprofile_provider.dar
 import 'package:grocery_app/Providers/Profile_providers/profile_provider.dart';
 import 'package:grocery_app/Providers/Cart_providers/addto_cart.dart';
 import 'package:grocery_app/Providers/Favourite_providers/addto_fav.dart';
-import 'package:grocery_app/Providers/Razorpay_keyproviders/razorpay_keyprovider.dart';
+import 'package:grocery_app/Providers/Worldline_keyproviders/worldline_keyprovider.dart';
 import 'package:grocery_app/Providers/allproducts_provider.dart';
 import 'package:grocery_app/Providers/catogorieslist_provider.dart';
 import 'package:grocery_app/Providers/createacc_provider.dart';
@@ -69,7 +69,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => AllproductsProvider()),
         ChangeNotifierProvider(create: (_) => EditProfileProvider()),
         ChangeNotifierProvider(create: (_) => BuyNowProvider()),
-        ChangeNotifierProvider(create: (_) => RazorpayKeyProvider()),
+        ChangeNotifierProvider(create: (_) => WorldlineKeyProvider()),
         ChangeNotifierProvider(create: (_) => PlaceOrderProvider()),
       ],
       child: MaterialApp(

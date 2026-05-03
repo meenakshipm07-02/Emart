@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/API/main_api.dart';
 import 'package:grocery_app/Models/Merchant_keyModel/merchantkey_model.dart';
 
-class RazorpayKeyProvider with ChangeNotifier {
+class WorldlineKeyProvider with ChangeNotifier {
   bool _isLoading = false;
   String _error = '';
-  MerchantKeyResponse? _razorpayKey;
+  MerchantKeyResponse? _worldlinekey;
   String? _message;
 
   bool get isLoading => _isLoading;
   String get error => _error;
-  MerchantKeyResponse? get razorpayKey => _razorpayKey;
+  MerchantKeyResponse? get worldlineKey => _worldlinekey;
   String? get message => _message;
 
   Future<void> fetchRazorpayKey() async {
@@ -20,9 +20,9 @@ class RazorpayKeyProvider with ChangeNotifier {
 
     try {
       final mainApis = Main_Apis();
-      final response = await mainApis.getRazorpayKey();
-      _razorpayKey = MerchantKeyResponse.fromJson(response);
-      _message = 'Razorpay key fetched successfully';
+      final response = await mainApis.getWorldlineKey();
+      _worldlinekey = MerchantKeyResponse.fromJson(response);
+      _message = 'Worldline key fetched successfully';
     } catch (e) {
       _error = e.toString();
     } finally {
@@ -32,7 +32,7 @@ class RazorpayKeyProvider with ChangeNotifier {
   }
 
   void clearData() {
-    _razorpayKey = null;
+    _worldlinekey = null;
     _error = '';
     _message = null;
     notifyListeners();

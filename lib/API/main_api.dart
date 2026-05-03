@@ -951,8 +951,8 @@ class Main_Apis {
     }
   }
 
-  //razorpay key getting api .....completed
-  Future<Map<String, dynamic>> getRazorpayKey() async {
+  //Worldline key getting api .....completed
+  Future<Map<String, dynamic>> getWorldlineKey() async {
     const String url =
         'https://design-pods.com/indiamart/public/merchantkey.php';
 
@@ -981,7 +981,7 @@ class Main_Apis {
           throw 'Invalid response format from server.';
         }
       } else {
-        throw 'Failed to get Razorpay key: ${response.statusCode}';
+        throw 'Failed to get Worldline key: ${response.statusCode}';
       }
     } on SocketException {
       throw 'No internet connection. Please check your network.';
@@ -990,7 +990,7 @@ class Main_Apis {
     } on FormatException {
       throw 'Invalid response format from server.';
     } catch (e) {
-      throw 'Error getting Razorpay key: $e';
+      throw 'Error getting Worldline key: $e';
     }
   }
 
